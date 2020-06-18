@@ -1,17 +1,4 @@
 # Node.js
-- task: SnykSecurityScan@0
-  inputs:
-    serviceConnectionEndpoint: 'snyk test'
-    testType: 'app'
-    monitorOnBuild: true
-    failOnIssues: true
-- task: SnykSecurityScan@0
-  inputs:
-    serviceConnectionEndpoint: 'snyk test'
-    testType: 'app'
-    severityThreshold: 'high'
-    monitorOnBuild: true
-    failOnIssues: true
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
@@ -32,3 +19,11 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+
+
+- task: SnykSecurityScan@0
+  inputs:
+    serviceConnectionEndpoint: 'snyk test'
+    testType: 'app'
+    monitorOnBuild: true
+    failOnIssues: true
