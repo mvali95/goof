@@ -3,6 +3,12 @@
   inputs:
     serviceConnectionEndpoint: 'snyk test'
     testType: 'app'
+    monitorOnBuild: true
+    failOnIssues: true
+- task: SnykSecurityScan@0
+  inputs:
+    serviceConnectionEndpoint: 'snyk test'
+    testType: 'app'
     severityThreshold: 'high'
     monitorOnBuild: true
     failOnIssues: true
