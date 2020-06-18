@@ -1,7 +1,9 @@
 # Node.js
 - task: SnykSecurityScan@0
   inputs:
+    serviceConnectionEndpoint: 'snyk test'
     testType: 'app'
+    severityThreshold: 'high'
     monitorOnBuild: true
     failOnIssues: true
 # Build a general Node.js project with npm.
@@ -9,7 +11,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-master
+- master
 
 pool:
   vmImage: 'ubuntu-latest'
